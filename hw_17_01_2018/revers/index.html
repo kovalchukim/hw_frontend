@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Revers</title>
+    <script>
+
+        var makeARandomNumber = function(){
+            return Math.floor(Math.random() * 9);
+        };
+        var myArray = Array(10).fill(0).map(makeARandomNumber);
+
+        for(var i = 0; i < myArray.length/2; i++) {
+            var boof;
+            boof = myArray[myArray.length - (i+1)];
+            myArray[myArray.length - (i+1)] = myArray[i];
+            myArray[i] = boof;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
