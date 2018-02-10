@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Calculator</title>
+    <script>
+
+        var num1,num2,oper;
+
+        num1=+prompt("Type a first number: ");
+        oper=prompt("Type an operator: ");
+        num2=+prompt("Type a second number: ");
+
+        if(num1 === parseInt(num1, 10) && num2 === parseInt(num2, 10)){
+            oper == ('+') ? add(num1, num2, function (result) {
+                    alert (result);
+            })
+            : oper == ('-') ? sub(num1, num2, function (result) {
+                alert (result);
+            })
+            : oper == ('*') ? mul(num1, num2, function (result) {
+                alert (result);
+            })
+            : oper == ('/') ? div(num1, num2, function (result) {
+                alert (result);
+            })
+            : alert('Send correct value');
+        }
+
+        function add(a, b, callback) {
+            callback (a + b)
+        }
+
+        function sub(a, b, callback) {
+            callback (a - b)
+        }
+
+        function mul(a, b, callback) {
+            callback (a * b)
+        }
+
+        function div(a, b, callback) {
+            callback (a / b)
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

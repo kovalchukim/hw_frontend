@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script>
+        function Automobile(manufact, model, year, color) {
+            this.color = color;
+            this.model = model;
+            this.year = year;
+            this.manufact = manufact;
+
+            this.getAutoColor = function () {
+                return this.color;
+            };
+
+            this.getAutoInfo = function () {
+                return this.manufact + ' ' + this.model + ' ' + this.year;
+            }
+        }
+
+        var nissan = new Automobile('Nissan', 'Skyline', 2007, 'Red');
+        var toyota = new Automobile('Toyota', 'Corolla', 2009, 'Black');
+        var volkswagen = new Automobile('Volkswagen', 'Golf', 2009, 'Blue');
+        var Ford = new Automobile('Ford', 'Focus', 2010, 'White');
+
+        console.log('Nissan color: ' + nissan.getAutoColor());
+        console.log('Toyota color: ' + toyota.getAutoColor());
+        console.log('Volkswagen color: ' + volkswagen.getAutoColor());
+
+        console.log('Nissan info: ' + nissan.getAutoInfo());
+        console.log('Toyota info: ' + toyota.getAutoInfo());
+        console.log('Volkswagen info: ' + volkswagen.getAutoInfo());
+
+        function Driver(_name, _experience){
+            this.name = _name;
+            this.experience = _experience;
+
+            this.getDriverInfo = function () {
+                console.log('Driver name: ' + this.name + ', experience: ' + this.experience)
+            }
+        }
+
+        Driver.prototype = Ford;
+
+        var dima = new Driver('Dima', 3);
+
+        dima.getDriverInfo();
+
+        console.log(dima.getAutoColor());
+        console.log(dima.getAutoInfo());
+
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Creating Constructor</title>
+</head>
+<body>
+
+</body>
+</html>

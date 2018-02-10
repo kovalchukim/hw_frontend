@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Line Of People</title>
+    <script>
+        var list = [];
+
+        var person = {
+            name: '',
+            sname: '',
+            age: '',
+            sex: '',
+            itLanguage: ''
+        };
+
+        function ask() {
+            person.name = prompt("Enter name:");
+            person.sname = prompt("Enter surname:");
+            person.age = prompt("Enter age:");
+            person.sex = prompt("Enter gender:");
+            person.itLanguage = prompt("Enter It Language:");
+            list.push(person); // ask: push - writes last value, for all length of array, when we created
+                                // 2 different person, push writes lust person 2 time
+            console.log(list);
+        }
+
+        function say() {
+            var nextStep = prompt("If you want add new person, write 'NEW', " +
+                "if you want to look all persons, write 'LOOK', " +
+                "if you want finished, write 'FIN' or push 'cancel' ");
+            switch(nextStep) {
+                case 'new':
+                case 'NEW':
+                    ask();
+                    say();
+                    break;
+                case 'look':
+                case 'LOOK':
+                    showPerson();
+                    break;
+                case 'fin':
+                case 'null':
+                    alert('Good By!');
+                    break;
+                default:
+                    alert('By');
+                    break;
+            }
+        }
+
+        function showPerson() {
+            console.log(list);
+            document.write('<ul>');
+
+            for(var i = 0; i < list.length; i++){
+                document.write(i);
+
+                document.write('<li>');
+                document.write(list[i].name + ' ');
+                document.write(list[i].sname + ' ');
+                document.write(list[i].age + ' ');
+                document.write(list[i].sex + ' ');
+                document.write(list[i].itLanguage);
+                document.write('</li>');
+            }
+            document.write('</ul>');
+        }
+
+        ask();
+        say();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
