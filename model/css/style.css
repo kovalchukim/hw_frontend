@@ -1,0 +1,191 @@
+
+html {height: 100%;}
+
+body {
+    height: 100%;
+    font: 14px/18px 'Times New Roma', Times, sans-serif;
+}
+
+ol, ul {list-style: none;}
+
+* {
+margin: 0;
+padding: 0;
+outline: none;
+}
+
+a, a:hover{text-decoration: none;}
+
+.clearfix:before,
+.clearfix:after {
+content: "";
+display: table;
+}
+
+.clearfix:after {clear: both;}
+
+.left {float: left;}
+.right {float: right;}
+
+
+li {
+list-style-type: none;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.clearfix:after{clear: both;}
+
+.container {
+    width: 940px;
+    margin: 0 auto;
+}
+
+#header {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+}
+
+logo {
+    float: left;
+}
+
+.nav {
+    float: right;
+    padding-top: 5px;
+}
+
+.nav li {
+    float: left;
+    margin-right: 40px;
+}
+
+.nav li:last-child {margin-right: 0;}
+
+.nav a {
+    text-transform: uppercase;
+    font: 14px Arial, sans-serif;
+    color: #fff;
+}
+
+.nav a:hover{
+    color: #cccccc;
+}
+
+#home {
+    height: 650px;
+    padding-top: 270px;
+    text-align: center;
+    color: #fff;
+    background: #222 url(../image/home-bg.jpeg) no-repeat center bottom;
+    background-size: cover;
+}
+
+#home h3 {
+    margin-bottom: 40px;
+    font: 40px/40px Arial, sans-serif;
+}
+
+#home h1 {
+    margin-bottom: 50px;
+    font: 75px/75px Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.btn {
+    font: bold 24px/24px Arial, sans-serif;
+    text-transform: uppercase;
+    display: inline-block;  
+    padding: 20px 30px;
+    background: #fed136;
+    cursor: pointer;
+
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background: #c7a631;
+}
+
+.box {
+    padding: 120px 0;
+}
+
+#services {
+    text-align: center;
+}
+
+h2.title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font: bold 40px/40px Arial, sans-serif;
+    color: #222;
+}
+
+h5.title {
+    margin-bottom: 10px;
+    font: bold 18px/18px Arial, sans-serif;
+    color: #222;
+}
+    
+.descr {
+    margin-bottom : 10px;
+    font-size: 16px;
+    color: #777;
+}
+
+.services-wrap {
+    padding-top: 70px;
+}
+
+.services-item {
+    float: left;
+    width: 31%;
+    padding: 90px 10px 0;
+}
+
+.services-item p {
+    line-height: 24px;
+    font-size: 18px;
+    color: #777;
+}
+
+.commerce {
+    background: url("../image/commerce.png") no-repeat center top;
+}
+
+.responsive {
+    background: url("../image/responsive.png") no-repeat center top;
+}
+
+.security {
+    background: url("../image/security.png") no-repeat center top;
+}
+
+#portfolio {
+    text-align: center;
+    background: #f7f7f7;
+}
+
+.portfolio-item {
+    float: left;
+    width: 310px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 290px;
+    height: 300px;
+}
+
+.portfolio-item:nth-child(3 n) {
+    margin-right: 0;
+}
