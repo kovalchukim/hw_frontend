@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stopwatch</title>
+    <script>
+
+        window.onload = function () {
+            var counter = 118800;
+            var intervalHandler;
+            var seconds = get("seconds");
+            var minutes = get("minutes");
+            var hours = get("hours");
+
+            function count() {
+                get("output").innerHTML = counter;
+                seconds.setAttribute("style","transform: rotate(" + counter +"deg)");
+                minutes.setAttribute("style","transform: rotate(" + counter/60 +"deg)");
+                hours.setAttribute("style","transform: rotate(" + (counter/60)/12 +"deg)");
+                counter++;
+            }
+
+            get("startButton").onclick = function () {
+                if (!intervalHandler) {
+                    intervalHandler = setInterval(count, 100);
+
+                }
+            };
+
+            get("stopButton").onclick = function () {
+                clearInterval(intervalHandler);
+            };
+
+            get("resetButton").onclick = function () {
+                intervalHandler = clearInterval(intervalHandler);
+                counter = 0;
+                seconds.setAttribute("style","transform: rotate(" + counter +"deg)");
+                minutes.setAttribute("style","transform: rotate(" + counter +"deg)");
+                hours.setAttribute("style","transform: rotate(" + counter +"deg)");
+                get("output").innerHTML = counter;
+            };
+        }
+
+        var get = function (id) {
+            return document.getElementById(id);
+        }
+    </script>
+</head>
+<style>
+    .clock-wrap{
+        width: 400px;
+        height: 400px;
+        position: relative;
+    }
+    .clock-body{
+        width: 100%;
+        height: 100%;
+    }
+    .strelka{
+        position: absolute;
+        height: 44%;
+        left: 50%;
+        margin-left: -9px;
+        top: 50%;
+        margin-top: -168px;
+        transform: rotate(-360deg);
+        transform-origin: 50% 95%;
+    }
+    .hours{
+        height: 24%;
+        margin-top: -90px;
+        margin-left: -7px;
+        transform-origin: 50% 94%;
+    }
+    .minutes{
+        height: 34%;
+        margin-left: -11px;
+        margin-top: -129px;
+    }
+</style>
+<body>
+    <div>
+        <p id="output">0</p>
+        <input id="startButton" type="button" value="Start">
+        <input id="stopButton" type="button" value="Stop">
+        <input id="resetButton" type="button" value="Reset">
+    </div>
+    <div class="clock-wrap">
+        <img class="clock-body" src="image/stopwatch.jpg" alt="">
+        <img class="strelka seconds" src="image/sec.png" id="seconds" alt="" align="top">
+        <img class="strelka minutes" src="image/min.png" id="minutes" alt="" align="top">
+        <img class="strelka hours" src="image/hours.png" id="hours" alt="" align="top">
+    </div>
+
+</body>
+</html>
