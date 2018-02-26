@@ -9,7 +9,7 @@
     <script>
 
         window.onload = function () {
-            var counter = 118800;
+            var counter = 0;
             var intervalHandler;
             var seconds = get("seconds");
             var minutes = get("minutes");
@@ -17,15 +17,15 @@
 
             function count() {
                 get("output").innerHTML = counter;
-                seconds.setAttribute("style","transform: rotate(" + counter +"deg)");
-                minutes.setAttribute("style","transform: rotate(" + counter/60 +"deg)");
-                hours.setAttribute("style","transform: rotate(" + (counter/60)/12 +"deg)");
+                seconds.setAttribute("style","transform: rotate(" + counter/60*360 +"deg)");
+                minutes.setAttribute("style","transform: rotate(" + (counter/60*360 )/ 60 +"deg)");
+                hours.setAttribute("style","transform: rotate(" + ((counter/60*360 )/ 60)/12 +"deg)");
                 counter++;
             }
 
             get("startButton").onclick = function () {
                 if (!intervalHandler) {
-                    intervalHandler = setInterval(count, 100);
+                    intervalHandler = setInterval(count, 1000);
 
                 }
             };
@@ -82,18 +82,18 @@
     }
 </style>
 <body>
-    <div>
-        <p id="output">0</p>
-        <input id="startButton" type="button" value="Start">
-        <input id="stopButton" type="button" value="Stop">
-        <input id="resetButton" type="button" value="Reset">
-    </div>
-    <div class="clock-wrap">
-        <img class="clock-body" src="image/stopwatch.jpg" alt="">
-        <img class="strelka seconds" src="image/sec.png" id="seconds" alt="" align="top">
-        <img class="strelka minutes" src="image/min.png" id="minutes" alt="" align="top">
-        <img class="strelka hours" src="image/hours.png" id="hours" alt="" align="top">
-    </div>
+<div>
+    <p id="output">0</p>
+    <input id="startButton" type="button" value="Start">
+    <input id="stopButton" type="button" value="Stop">
+    <input id="resetButton" type="button" value="Reset">
+</div>
+<div class="clock-wrap">
+    <img class="clock-body" src="image/stopwatch.jpg" alt="">
+    <img class="strelka seconds" src="image/sec.png" id="seconds" alt="" align="top">
+    <img class="strelka minutes" src="image/min.png" id="minutes" alt="" align="top">
+    <img class="strelka hours" src="image/hours.png" id="hours" alt="" align="top">
+</div>
 
 </body>
 </html>
